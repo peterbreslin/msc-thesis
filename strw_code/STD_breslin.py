@@ -561,7 +561,7 @@ class LineSegments(object):
         # delta image is the difference between two consecutive images, lst_positive is the local sidereal time 
         # corresponding to the second image and lst_negative is the local sidereal time corresponding to the first image 
         # (which is subtracted from the first and therefore corresponds to negative pixel values), connected_line is the 
-        # begin- and endpoint of a line found by the Hough transform routine RANSAC_lx and RANSAC_ly are the x, y 
+        # begin- and end-point of a line found by the Hough transform routine RANSAC_lx and RANSAC_ly are the x, y 
         # coordinates of the RANSAC fit to the line segment. 
         
         x0, y0, x1, y1 = connected_line
@@ -684,7 +684,7 @@ class LineSegments(object):
             
             if linesegmentlength < self.minLineLength:
                 if self.verbal:
-                    print("Line segment is shorter than minimal lenght of", self.minLineLength, "pixels")
+                    print("Line segment is shorter than minimal length of", self.minLineLength, "pixels")
                 return np.nan, np.nan, np.nan, np.nan, np.nan 
             
             else:            
@@ -738,7 +738,7 @@ class LineSegments(object):
                 
             if linesegmentlength < self.minLineLength:
                 if self.verbal:
-                    print("Line segment is shorter than minimal lenght of", self.minLineLength, "pixels")
+                    print("Line segment is shorter than minimal length of", self.minLineLength, "pixels")
                 return np.nan, np.nan, np.nan, np.nan, np.nan 
             
             else:                              
